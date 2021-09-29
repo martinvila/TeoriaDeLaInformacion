@@ -1,13 +1,21 @@
+import java.util.Arrays;
 
 public class Simbolo {
 	private String codigo;
+	private int frecuencia;
 	private double cantidad_informacion;
 	private double probabilidad;
+	private double[] prob_condicional = {0,0,0,0};
 	
 	public Simbolo(String codigo) {
 		this.codigo = codigo;
+		this.frecuencia = 1;
 		this.cantidad_informacion = 0;
-		this.probabilidad = 1;
+		this.probabilidad = 0;
+	}
+
+	public void setProb_condicional(double[] prob_condicional) {
+		this.prob_condicional = prob_condicional;
 	}
 
 	public String getCodigo() {
@@ -33,12 +41,27 @@ public class Simbolo {
 	public double getCantidad_informacion() {
 		return cantidad_informacion;
 	}
+	
+	public double[] getProb_condicional() {
+		return prob_condicional;
+	}
+	
+	public int getFrecuencia() {
+		return frecuencia;
+	}
+
+	public void setFrecuencia(int frecuencia) {
+		this.frecuencia = frecuencia;
+	}
 
 	@Override
 	public String toString() {
-		return "Simbolo [codigo=" + codigo + ", cantidad de informacion=" + cantidad_informacion + ", probabilidad="
-				+ probabilidad + "]\n";
+		return "Simbolo [codigo=" + codigo + ", frecuencia=" + frecuencia + ", probabilidad=" + probabilidad
+				+ ", prob_condicional=" + Arrays.toString(prob_condicional) + "]\n";
 	}
+
+	
+
 	
 	
 }
