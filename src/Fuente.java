@@ -4,6 +4,8 @@ import java.util.Iterator;
 public class Fuente {
 	private ArrayList<Simbolo> simbolos = new ArrayList<Simbolo>();
 	private double entropia = 0;
+	private double longitud_media = 0;
+	private double rendimiento = 0;
 	private double cantidad_informacion;
 	private boolean memoria_nula;
 	
@@ -31,6 +33,22 @@ public class Fuente {
 		this.memoria_nula = memoria_nula;
 	}
 	
+	public double getLongitud_media() {
+		return longitud_media;
+	}
+
+	public void setLongitud_media(double longitud_media) {
+		this.longitud_media = longitud_media;
+	}
+
+	public double getRendimiento() {
+		return rendimiento;
+	}
+
+	public void setRendimiento(double rendimiento) {
+		this.rendimiento = rendimiento;
+	}
+
 	public void calcula_cantInformacion() {
 		Iterator<Simbolo> it = this.simbolos.iterator();
 		while(it.hasNext()) {

@@ -1,6 +1,5 @@
-import java.util.Arrays;
 
-public class Simbolo {
+public class Simbolo implements Comparable<Object>{
 	private String codigo;
 	private int frecuencia;
 	private double cantidad_informacion;
@@ -53,11 +52,23 @@ public class Simbolo {
 	public void setFrecuencia(int frecuencia) {
 		this.frecuencia = frecuencia;
 	}
+	
+	
 
 	@Override
 	public String toString() {
-		return "Simbolo [codigo=" + codigo + ", frecuencia=" + frecuencia + ", probabilidad=" + probabilidad
-				+ ", prob_condicional=" + Arrays.toString(prob_condicional) + "]\n";
+		return "Simbolo [codigo=" + codigo + ", frecuencia=" + frecuencia + ", probabilidad=" + (double)Math.round(probabilidad * 100000d) / 100000d
+				+ "]\n";
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Simbolo s = (Simbolo) o; 
+		
+		if (this.getProbabilidad() >= s.getProbabilidad())
+			return -1;
+		else
+			return 1;
 	}
 
 	
