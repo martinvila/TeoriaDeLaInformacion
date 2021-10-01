@@ -84,6 +84,13 @@ public class Fuente implements Cloneable {
 		
 		return fuenteClonada;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Fuente " + simbolos;
+	}
+	
 	
 	
 }

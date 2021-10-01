@@ -80,10 +80,20 @@ public class Simbolo implements Cloneable, Comparable<Object>{
 	}
 
 	
+	public static int getSig_id() {
+		return sig_id;
+	}
+
+
+	public static void setSig_id(int sig_id) {
+		Simbolo.sig_id = sig_id;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Simbolo [id="+ id +", codigo=" + codigo + ", frecuencia=" + frecuencia + ", probabilidad=" + (double)Math.round(probabilidad * 100000d) / 100000d
-				+ "]\n";
+		return "\nSimbolo [id="+ id +", codigo=" + codigo + ", probabilidad=" + (double)Math.round(probabilidad * 100000d) / 100000d
+				+ "]";
 	}
 	
 	

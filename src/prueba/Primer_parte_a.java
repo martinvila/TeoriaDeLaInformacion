@@ -15,12 +15,14 @@ public static void main(String[] args) {
 		escenario_1.getFuente().calcula_cantInformacion();
 		escenario_1.getFuente().calcula_entropia();
 		
+		Simbolo.setSig_id(0);
 		Escenario escenario_2 = new Escenario(7);
 		
 		escenario_2.probabilidad_Independiente();
 		escenario_2.getFuente().calcula_cantInformacion();
 		escenario_2.getFuente().calcula_entropia();
 		
+		Simbolo.setSig_id(0);
 		Escenario escenario_3 = new Escenario(9);
 		
 		escenario_3.probabilidad_Independiente();

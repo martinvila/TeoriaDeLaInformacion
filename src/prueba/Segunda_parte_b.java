@@ -1,6 +1,7 @@
 package prueba;
 
 import modelo.Escenario;
+import modelo.Simbolo;
 
 public class Segunda_parte_b {
 
@@ -11,11 +12,13 @@ public class Segunda_parte_b {
 		escenario_1.probabilidad_Independiente();
 		escenario_1.longitud_media();
 		
+		Simbolo.setSig_id(0);
 		Escenario escenario_2 = new Escenario(7);
 		
 		escenario_2.probabilidad_Independiente();
 		escenario_2.longitud_media();
 		
+		Simbolo.setSig_id(0);
 		Escenario escenario_3 = new Escenario(9);
 		
 		escenario_3.probabilidad_Independiente();

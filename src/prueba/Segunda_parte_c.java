@@ -1,6 +1,7 @@
 package prueba;
 
 import modelo.Escenario;
+import modelo.Simbolo;
 
 public class Segunda_parte_c {
 
@@ -14,6 +15,7 @@ public class Segunda_parte_c {
 		escenario_1.longitud_media();
 		escenario_1.getFuente().setRendimiento(escenario_1.getFuente().getEntropia() / escenario_1.getFuente().getLongitud_media());
 		
+		Simbolo.setSig_id(0);
 		Escenario escenario_2 = new Escenario(7);
 		
 		escenario_2.probabilidad_Independiente();
@@ -22,6 +24,7 @@ public class Segunda_parte_c {
 		escenario_2.longitud_media();
 		escenario_2.getFuente().setRendimiento(escenario_2.getFuente().getEntropia() / escenario_2.getFuente().getLongitud_media());
 		
+		Simbolo.setSig_id(0);
 		Escenario escenario_3 = new Escenario(9);
 		
 		escenario_3.probabilidad_Independiente();
