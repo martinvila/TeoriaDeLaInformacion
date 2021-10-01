@@ -101,10 +101,13 @@ public class Simbolo implements Cloneable, Comparable<Object>{
 	public int compareTo(Object o) {
 		Simbolo s = (Simbolo) o; 
 		
-		if (this.getProbabilidad() >= s.getProbabilidad())
+		if (this.getProbabilidad() > s.getProbabilidad())
 			return -1;
 		else
-			return 1;
+			if (this.getProbabilidad() == s.getProbabilidad())
+				return 0;
+			else
+				return 1;
 	}
 
 	

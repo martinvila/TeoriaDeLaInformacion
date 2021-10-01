@@ -63,7 +63,7 @@ public class Escenario {
 		codigo = datos.substring(a, b);
 		this.fuente.getSimbolos().add(new Simbolo(codigo));
 		while ( b < datos.length() ) {
-			a += this.digitos;
+			a = b;
 			b += this.digitos;
 			codigo = datos.substring(a, b);
 			
