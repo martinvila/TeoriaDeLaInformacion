@@ -1,26 +1,28 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
 
 
-public class Primer_parte {
+public class Escenario {
 
 	private String datos;
 	private Fuente fuente = new Fuente();
 	
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
-		Primer_parte primera_parte = new Primer_parte();
-		primera_parte.readFile();
+		Escenario escenario_1 = new Escenario();
+		escenario_1.readFile();
 		
-		primera_parte.genera_Fuente(5);
-		primera_parte.probabilidad_Independiente(5);
-		primera_parte.fuente.calcula_cantInformacion();
-		primera_parte.fuente.calcula_entropia();
+		escenario_1.genera_Fuente(5);
+		escenario_1.probabilidad_Independiente(5);
+		escenario_1.fuente.calcula_cantInformacion();
+		escenario_1.fuente.calcula_entropia();
 		//System.out.print(primera_parte.kraft_McMillan(2, primera_parte.fuente));
-		primera_parte.longitud_media(primera_parte.fuente);
+		escenario_1.longitud_media(escenario_1.fuente);
 		/*
 		
 		primera_parte.genera_Fuente(7);
@@ -67,10 +69,18 @@ public class Primer_parte {
 		primera_parte.fuente.getSimbolos().add(s4);
 		*/
 		
-		Collections.sort(primera_parte.fuente.getSimbolos());
-		System.out.print(primera_parte.fuente.getSimbolos() + "\n");
-		primera_parte.huffman(primera_parte.fuente);
-		System.out.print(primera_parte.fuente.getSimbolos() + "\n");
+		Collections.sort(escenario_1.fuente.getSimbolos());
+		System.out.print(escenario_1.fuente.getSimbolos() + "\n");
+		Fuente huffman = null;
+		try {
+			huffman = (Fuente) escenario_1.fuente.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		escenario_1.huffman(huffman);
+		System.out.print(huffman.getSimbolos() + "\n");
+		escenario_1.genera_Huffman(escenario_1.fuente, huffman, 5);
 	}
 
 	public void readFile( ) {
@@ -87,6 +97,20 @@ public class Primer_parte {
 	        System.out.println("excepcion IO" + e);
 	    }
 		
+	}
+	
+	public void writeFile(String nombre_archivo, String resultado) {
+		
+		try {
+			
+			BufferedWriter bw = new BufferedWriter(new FileWriter(nombre_archivo, true));
+			
+			bw.write(resultado);
+			bw.close();
+		}
+		catch (IOException e) {
+			System.out.println("excepcion IO" + e);
+		}
 	}
 	
 	
@@ -213,5 +237,36 @@ public class Primer_parte {
 			ult_simbolo.setCodigo(ant_simbolo.getCodigo() +"1");
 			ant_simbolo.setCodigo(ant_simbolo.getCodigo() +"0");
 		}
+	}
+	
+	public void genera_Huffman(Fuente fuente,Fuente huffman,int digitos) {
+		int a,b;
+		String codigo;
+		
+		a = 0;
+		b = digitos;
+		
+		while ( b <= datos.length() ) {
+			
+			codigo = datos.substring(a, b);
+			
+			Iterator<Simbolo> it = fuente.getSimbolos().iterator();
+			Simbolo s = (Simbolo) it.next();
+			while(it.hasNext() && !s.getCodigo().equals(codigo))
+				s = it.next();
+			
+			it = huffman.getSimbolos().iterator();
+			Simbolo sH = (Simbolo) it.next();
+			while(it.hasNext() && s.getId() != sH.getId() )
+				sH = it.next();
+			
+			
+			this.writeFile("Huffman_escenario_1",sH.getCodigo());
+			
+			a += digitos;
+			b += digitos;
+		}
+			
+			
 	}
 } 
