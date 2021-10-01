@@ -1,3 +1,4 @@
+package modelo;
 
 public class Simbolo implements Cloneable, Comparable<Object>{
 	

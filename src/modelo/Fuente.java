@@ -1,3 +1,4 @@
+package modelo;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -83,5 +84,6 @@ public class Fuente implements Cloneable {
 		
 		return fuenteClonada;
 	}
-
+	
+	
 }

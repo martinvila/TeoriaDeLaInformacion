@@ -1,0 +1,20 @@
+ESCENARIO: Palabras codigo de 5 digitos
+
+RENDIMIENTO: 99.95227 %
+REDUNDANCIA: 0.04773 %
+
+
+---------------------------------------------------------------------------------------------------
+
+ESCENARIO: Palabras codigo de 7 digitos
+
+RENDIMIENTO: 99.73313 %
+REDUNDANCIA: 0.26687 %
+
+
+---------------------------------------------------------------------------------------------------
+
+ESCENARIO: Palabras codigo de 9 digitos
+
+RENDIMIENTO: 98.79609 %
+REDUNDANCIA: 1.20391 %

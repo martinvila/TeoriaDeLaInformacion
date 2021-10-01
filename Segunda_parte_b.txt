@@ -1,0 +1,23 @@
+ESCENARIO: Palabras codigo de 5 digitos
+
+INECUACION DE KRAFT: 1.0
+LONGITUD MEDIA: 5.000000000000001
+EL CODIGO ES COMPACTO
+
+
+---------------------------------------------------------------------------------------------------
+
+ESCENARIO: Palabras codigo de 7 digitos
+
+INECUACION DE KRAFT: 1.0
+LONGITUD MEDIA: 6.999999999999999
+EL CODIGO ES COMPACTO
+
+
+---------------------------------------------------------------------------------------------------
+
+ESCENARIO: Palabras codigo de 9 digitos
+
+INECUACION DE KRAFT: 1.0
+LONGITUD MEDIA: 9.000000000000016
+EL CODIGO ES COMPACTO
