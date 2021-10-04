@@ -84,6 +84,11 @@ public class Escenario {
 	}
 
 
+	public void setFuente(Fuente fuente) {
+		this.fuente = fuente;
+	}
+
+
 	public void probabilidad_Independiente() {
 		
 		Iterator<Simbolo> it = this.fuente.getSimbolos().iterator();
@@ -214,10 +219,10 @@ public class Escenario {
 			
 			codificacion.append(sH.getCodigo());
 			
-			//this.writeFile(nombre,sH.getCodigo());
 			
 			a += this.digitos;
 			b += this.digitos;
+			
 		}
 		this.writeFile(nombre,codificacion.toString());
 	}

@@ -38,7 +38,6 @@ public class Segunda_parte_d {
 		escenario_1.rebuild_File("Huffman_Escenario_1.txt", huffman_1);
 		escenario_2.rebuild_File("Huffman_Escenario_2.txt", huffman_2);
 		escenario_3.rebuild_File("Huffman_Escenario_3.txt", huffman_3);
-
 	}
 
 }
